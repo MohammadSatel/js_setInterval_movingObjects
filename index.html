@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson5 Javascript SetInterval</title>
+</head>
+
+<body>
+    <div id="d1" style="position: absolute;">
+        <button style="background-color: cornflowerblue;" onclick="moveRight()">move right</button>
+    </div>
+    <br>
+    <div id="d2" style="position: absolute;">
+        <button style="background-color: crimson;" onclick="moveDown()">move down</button>
+    </div>
+    <br>
+    <div id="d3" style="position: absolute;"><img src="ball.jpg" width="200px"></div>
+    <br><br><br>
+    <div id="d4" style="position: absolute;"><img src="ball.jpg" width="100px"></div>
+
+    <script>
+        // re+ht - vars (instead i/index) for making things clear
+        let rt = 100
+        let ht = 100
+        let deltart = 15
+        let deltaht = 15
+
+        function moveRight2() {
+            // console.log(window.innerWidth) - checks for window width 
+            console.log(d4.style.left);
+            if (rt > window.innerWidth - 50 || rt < 0) {
+                deltart = -deltart
+            }
+            d4.style.left = rt + "px"
+            rt += deltart
+
+        }
+        
+        function moveRight() {
+            // console.log(window.innerWidth) - checks for window width 
+            console.log(d3.style.left);
+            if (rt > window.innerWidth - 50 || rt < 0) {
+                deltart = -deltart
+            }
+            d3.style.left = rt + "px"
+            rt += deltart
+
+        }
+
+        function moveDown() {
+            // console.log(window.innerHeight) - checks for window height
+            console.log(d3.style.top);
+            if (ht > window.innerHeight - 50 || ht < 0) {
+                deltaht = -deltaht
+            }
+            d3.style.top = ht + "px"
+            ht += deltaht
+
+
+        }
+        function moveDown2() {
+            // console.log(window.innerHeight) - checks for window height
+            console.log(d4.style.top);
+            if (ht > window.innerHeight - 50 || ht < 0) {
+                deltaht = -deltaht
+            }
+            d4.style.top = ht + "px"
+            ht += deltaht
+
+
+        }
+        // starting functions (function , ms)
+        setInterval(moveDown, 50)
+        setInterval(moveRight, 30)
+        setInterval(moveRight2, 450)
+        setInterval(moveDown2, 550)
+
+    </script>
+</body>
+
+</html>
